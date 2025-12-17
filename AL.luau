@@ -1,5 +1,5 @@
 --[[
-	A I M L O C K 
+	A I M L O C K
 ]]
     --- Configuration ---
 local aimbotEnabled = false
@@ -160,14 +160,11 @@ RunService.RenderStepped:Connect(function()
         updateSnapLine(head.Position)
         updateHeadDot(head.Position)
         local targetCFrame = CFrame.new(Camera.CFrame.Position, head.Position)
-        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.55)
+        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.55) -- 1 = snap, lower = smoother
         updateDistanceLabel(closestPlayer, shortestDistance)
     else
         SnapLine.Visible = false
         HeadDot.Visible = false
     end
 end)
-
 --- END OF FILE ---
-
-
