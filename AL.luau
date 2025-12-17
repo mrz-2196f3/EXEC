@@ -1,5 +1,5 @@
 --[[
-	Aimbot Script for Roblox - Rage Aimbot with Full Circle FOV, Snap Line, Head Dot, and Distance Display
+	A I M L O C K 
 ]]
     --- Configuration ---
 local aimbotEnabled = false
@@ -160,11 +160,12 @@ RunService.RenderStepped:Connect(function()
         updateSnapLine(head.Position)
         updateHeadDot(head.Position)
         local targetCFrame = CFrame.new(Camera.CFrame.Position, head.Position)
-        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.25)
+        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.45)
         updateDistanceLabel(closestPlayer, shortestDistance)
     else
         SnapLine.Visible = false
         HeadDot.Visible = false
     end
 end)
+
 --- END OF FILE ---
