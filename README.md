@@ -1,2 +1,2 @@
 # EXEC
-Roblox Exploit
+Auto Aim Lock base on FOV size.
