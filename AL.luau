@@ -15,6 +15,13 @@ local RunService = game:GetService("RunService")
 local Camera = game.Workspace.CurrentCamera
 local LocalPlayer = Players.LocalPlayer
 local RunService = game:GetService("RunService")
+local function rainbowColor(obj)
+    local hue = 0
+    RunService.Heartbeat:Connect(function(dt)
+	   hue = (hue + dt * 0.2) % 1
+	   obj.Color = Color3.fromHSV(hue, 1, 1)
+    end)
+end
 
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Color = Color3.fromRGB(255, 0, 0)
@@ -37,13 +44,6 @@ HeadDot.Visible = false
 rainbowColor(HeadDot)
 local DistanceLabels = {}
     --- Functions ---
-local function rainbowColor(obj)
-    local hue = 0
-    RunService.Heartbeat:Connect(function(dt)
-	   hue = (hue + dt * 0.2) % 1
-	   obj.Color = Color3.fromHSV(hue, 1, 1)
-    end)
-end
 
 local function updateDistanceLabel(player, distance)
     if not DistanceLabels[player] then
