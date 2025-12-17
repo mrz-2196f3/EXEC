@@ -5,6 +5,7 @@
 local aimbotEnabled = false
 local aimbotToggleKey = Enum.KeyCode.X -- Toggle aimbot with 'X' key
 local aimbotFOV = 50 -- Degrees
+local lockAccuracy = 0.25 -- 1 = snap, lower = smoother
 local aimbotMaxRange = 500 -- Studs / Maximum distance to target
 
     --- Services and Variables ---
@@ -160,7 +161,7 @@ RunService.RenderStepped:Connect(function()
         updateSnapLine(head.Position)
         updateHeadDot(head.Position)
         local targetCFrame = CFrame.new(Camera.CFrame.Position, head.Position)
-        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.55) -- 1 = snap, lower = smoother
+        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, lockAccuracy) 
         updateDistanceLabel(closestPlayer, shortestDistance)
     else
         SnapLine.Visible = false
@@ -168,3 +169,4 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 --- END OF FILE ---
+
