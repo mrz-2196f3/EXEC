@@ -160,7 +160,7 @@ RunService.RenderStepped:Connect(function()
         updateSnapLine(head.Position)
         updateHeadDot(head.Position)
         local targetCFrame = CFrame.new(Camera.CFrame.Position, head.Position)
-        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.5)
+        Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, 0.55)
         updateDistanceLabel(closestPlayer, shortestDistance)
     else
         SnapLine.Visible = false
@@ -169,4 +169,5 @@ RunService.RenderStepped:Connect(function()
 end)
 
 --- END OF FILE ---
+
 
