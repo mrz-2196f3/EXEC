@@ -1,5 +1,6 @@
 --[[
 	A I M L O C K
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/mrz-2196f3/EXEC/refs/heads/main/AL.lua", true))()
 ]]
     --- Configuration ---
 local aimbotEnabled = false
@@ -169,4 +170,5 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 --- END OF FILE ---
+
 
